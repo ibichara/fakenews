@@ -1,0 +1,80 @@
+vetor A(news) = { a1 ... an }
+vetor W(termos) = { w1 ... wt }
+vetor U(user) = { u1 ... um }
+vetor P(publishers) = { p1 ... pl }
+vetor o(partisan/bias) { o1 ... ol }  => {-1, 0, 1} (esquerda, meio, direita) l elementos (publishers)
+
+saida y = { y1 ... yn} {-1, 1}	
+
+
+========================================
+
+matrix X 
+
+News-Feature matrix
+
+(n x t)
+
+n: noticias
+t: termos
+
+
+=========================================
+
+matrix A
+
+User-User adjacency
+
+(m x m)
+
+m: usuarios
+
+==========================================
+
+matrix W (0, 1)
+
+Social news Engagement
+
+(m x n)
+
+m: usuarios
+n: noticias
+
+=========================================
+
+Matrix B (0, 1)
+
+Publishers of News
+
+(l x n )
+
+l: publisher
+n: noticia
+
+=========================================
+
+
+
+- Calcular os credibility c scores dos usuarios
+
+
+
+
+Algorithm 1 The optimization process of TriFN framework
+Require: X, A, B,W, Y, o, yL, α, β, γ, λ, η
+Ensure: yU
+1: Randomly initialize U, V, T, D, P, Q
+2: Precompute Laplacian matrix L
+3: repeat
+4: Update D with Eqn 14
+5: Update U with Eqn 18
+6: Update V with Eqn 20
+7: Update T with Eqn 22
+8: Update P,Q with Eqn 23
+9: until convergence
+10: Calculate yU = S
+
+
+
+
+
